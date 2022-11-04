@@ -19,3 +19,21 @@ VALUES
 ('Dysfunctional Friends', 'Terry', 2012, 'https://www.imdb.com/title/tt1653002/?ref_=ext_shr_lnk'),
 ('Random Encounters', 'Mindy', 2013, 'https://www.imdb.com/title/tt1586525/?ref_=ext_shr_lnk'),
 ('Anti-Social', 'Kirsten', 2015, 'https://www.imdb.com/title/tt3475596/?ref_=ext_shr_lnk');
+
+DROP TABLE IF EXISTS employee_data;
+
+CREATE TABLE employee_data (
+  id BIGINT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR NOT NULL, 
+  designation VARCHAR NULL, 
+  department VARCHAR NULL
+);
+
+INSERT INTO employee_data (name, designation, department)
+VALUES
+  ('CHIN YEN', 'LAB ASSISTANT', 'LAB'),
+  ('MIKE PEARL', 'SENIOR ACCOUNTANT', 'ACCOUNTS'),
+  ('GREEN FIELD', 'ACCOUNTANT', 'ACCOUNTS'),
+  ('DEWANE PAUL', 'PROGRAMMER', 'IT'),
+  ('MATTS', 'SR. PROGRAMMER', 'IT'),
+  ('PLANK OTO', 'ACCOUNTANT', 'ACCOUNTS');
