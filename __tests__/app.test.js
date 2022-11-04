@@ -17,6 +17,19 @@ describe('meghan_markle_movies routes', () => {
     });
     expect(res.body).toEqual(expected);
   });
+
+  id('should return movie details by id with /markle/:id route', async () => {
+    const res = await request(app).get('/markle/2');
+    const rememberMe =   {
+      'id': '2',
+      'title': 'Remember Me',
+      'role': 'Megan',
+      'year': 2010,
+      'imdb': 'https://www.imdb.com/title/tt1403981/?ref_=ext_shr_lnk'
+    };
+    expect(res.body).toEqual(rememberMe);
+  });
+
   afterAll(() => {
     pool.end();
   });
