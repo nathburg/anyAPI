@@ -4,7 +4,7 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { markleMovies } = require('../lib/markle-data');
-const { employees } = require('../lib/employee-data')
+const { employees } = require('../lib/employee-data');
 
 describe('route tests', () => {
   beforeEach(() => {
@@ -36,6 +36,17 @@ describe('route tests', () => {
     const expected = employees.map(emp => {
       return { id: emp.id, name: emp.name };
     });
+    expect(res.body).toEqual(expected);
+  });
+
+  it('should return full employee data by id with /employees/:id route', async () => {
+    const res = await request(app).get('/employees/1');
+    const expected =   {
+      'id': '1',
+      'name': 'CHIN YEN',
+      'designation': 'LAB ASSISTANT',
+      'department': 'LAB'
+    };
     expect(res.body).toEqual(expected);
   });
 

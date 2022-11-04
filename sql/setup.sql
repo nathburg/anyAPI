@@ -24,12 +24,12 @@ DROP TABLE IF EXISTS employee_data;
 
 CREATE TABLE employee_data (
   id BIGINT GENERATED ALWAYS AS IDENTITY,
-  empName VARCHAR NOT NULL, 
+  name VARCHAR NOT NULL, 
   designation VARCHAR NULL, 
   department VARCHAR NULL
 );
 
-INSERT INTO employee_data (empName, designation, department)
+INSERT INTO employee_data (name, designation, department)
 VALUES
   ('CHIN YEN', 'LAB ASSISTANT', 'LAB'),
   ('MIKE PEARL', 'SENIOR ACCOUNTANT', 'ACCOUNTS'),
