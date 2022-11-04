@@ -18,7 +18,7 @@ describe('meghan_markle_movies routes', () => {
     expect(res.body).toEqual(expected);
   });
 
-  id('should return movie details by id with /markle/:id route', async () => {
+  it('should return movie details by id with /markle/:id route', async () => {
     const res = await request(app).get('/markle/2');
     const rememberMe =   {
       'id': '2',
