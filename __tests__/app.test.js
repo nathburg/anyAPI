@@ -4,8 +4,9 @@ const request = require('supertest');
 const app = require('../lib/app');
 
 const { markleMovies } = require('../lib/markle-data');
+const { employees } = require('../lib/employee-data')
 
-describe('meghan_markle_movies routes', () => {
+describe('route tests', () => {
   beforeEach(() => {
     return setup(pool);
   });
@@ -28,6 +29,14 @@ describe('meghan_markle_movies routes', () => {
       'imdb': 'https://www.imdb.com/title/tt1403981/?ref_=ext_shr_lnk'
     };
     expect(res.body).toEqual(rememberMe);
+  });
+
+  it('should return all employees with /employees route', async () => {
+    const res = await request(app).get('/employees');
+    const expected = employees.map(emp => {
+      return { id: emp.id, name: emp.name };
+    });
+    expect(res.body).toEqual(expected);
   });
 
   afterAll(() => {
