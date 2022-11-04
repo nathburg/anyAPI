@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/styles.css" rel="stylesheet" />
+    <title>AnyAPI</title>
+  </head>
+  <body>
+    <header class="bg-gray-700 text-white p-4">
+      <h1 class="text-lg font-semibold">Meghan Markle and Employees API</h1>
+    </header>
+    <main class="p-4 w-1/2 m-auto">
+      This API lists Meghan Markle's movies, and also some employees from a place:
+      <table class="table border-2 mt-4">
+        <thead class="table-header-group border-2">
+          <tr>
+            <th class="table-cell p-3">Route</th>
+            <th class="table-cell p-3">Method</th>
+            <th class="table-cell p-3 w-40">Description</th>
+            <th class="table-cell p-3">Example</th>
+          </tr>
+        </thead>
+        <tbody class="table-row-group">
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/markle</pre></td>
+            <td class="table-cell p-3 text-center">GET</td>
+            <td class="table-cell p-3">Gets a list of Meghan Markle's movie titles and ids</td>
+            <td class="table-cell p-3">
+              <a href="/markle" target="_blank" class="text-blue-700"
+                >List Movies</a
+              >
+            </td>
+          </tr>
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/markle/:id</pre></td>
+            <td class="table-cell p-3 text-center">GET</td>
+            <td class="table-cell p-3">
+              Returns the detail about the movie matching the id in the parameter
+            </td>
+            <td class="table-cell p-3">
+              <a href="/markle/1" target="_blank" class="text-blue-700"
+                >Get Movie 1</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table border-2 mt-4">
+        <thead class="table-header-group border-2">
+          <tr>
+            <th class="table-cell p-3">Route</th>
+            <th class="table-cell p-3">Method</th>
+            <th class="table-cell p-3 w-40">Description</th>
+            <th class="table-cell p-3">Example</th>
+          </tr>
+        </thead>
+        <tbody class="table-row-group">
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/employees</pre></td>
+            <td class="table-cell p-3 text-center">GET</td>
+            <td class="table-cell p-3">Gets a list of employee names and ids</td>
+            <td class="table-cell p-3">
+              <a href="/employees" target="_blank" class="text-blue-700"
+                >List Employees</a
+              >
+            </td>
+          </tr>
+          <tr class="border-2">
+            <td class="table-cell p-3"><pre>/employees/:id</pre></td>
+            <td class="table-cell p-3 text-center">GET</td>
+            <td class="table-cell p-3">
+              Returns the detail about the employee matching the id in the parameter
+            </td>
+            <td class="table-cell p-3">
+              <a href="/employees/1" target="_blank" class="text-blue-700"
+                >Get Employee 1</a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
+  </body>
+</html>
